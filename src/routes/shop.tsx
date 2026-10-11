@@ -39,7 +39,7 @@ function Shop() {
         <Link to="/shop" search={{ c: "girls" }} className={tab(c === "girls")}>Soft Chaos</Link>
         <Link to="/shop" search={{ c: "boys" }} className={tab(c === "boys")}>Back Bench</Link>
       </div>
-      <ProductGrid query={query} />
+      <ProductGrid collection={c} />
     </div>
   );
 }
