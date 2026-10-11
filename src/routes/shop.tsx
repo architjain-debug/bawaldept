@@ -1,12 +1,13 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ProductGrid } from "@/components/ProductGrid";
 
-type Search = { c?: "girls" | "boys" };
+type Search = { c?: "girls" | "boys" | undefined };
 
 export const Route = createFileRoute("/shop")({
-  validateSearch: (s: Record<string, unknown>): Search => ({
-    c: s.c === "girls" || s.c === "boys" ? s.c : undefined,
-  }),
+  validateSearch: (s: Record<string, unknown>): Search => {
+    const c = s["c"];
+    return { c: c === "girls" || c === "boys" ? c : undefined };
+  },
   head: () => ({
     meta: [
       { title: "Shop All Posters — BAWAL DEPT." },

@@ -2,12 +2,12 @@ import { useQuery } from "@tanstack/react-query";
 import { fetchProducts } from "@/lib/shopify";
 import { ProductCard } from "./ProductCard";
 
-export const productsQuery = (q?: string) => ({
+export const productsQuery = (q?: string | undefined) => ({
   queryKey: ["products", q ?? "all"],
   queryFn: () => fetchProducts(50, q),
 });
 
-export function ProductGrid({ query, limit }: { query?: string; limit?: number }) {
+export function ProductGrid({ query, limit }: { query?: string | undefined; limit?: number }) {
   const { data, isLoading, isError } = useQuery(productsQuery(query));
   if (isLoading)
     return (
