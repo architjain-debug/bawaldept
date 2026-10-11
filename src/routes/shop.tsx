@@ -28,7 +28,6 @@ const titles = {
 function Shop() {
   const { c } = Route.useSearch();
   const [title, sub] = titles[c ?? "all"];
-  const query = c ? `tag:${c}` : undefined;
   const tab = (active: boolean) =>
     `border-2 px-4 py-2 font-display text-sm transition ${active ? "border-primary bg-primary text-primary-foreground" : "border-foreground hover:border-primary"}`;
   return (
@@ -40,7 +39,7 @@ function Shop() {
         <Link to="/shop" search={{ c: "girls" }} className={tab(c === "girls")}>Soft Chaos</Link>
         <Link to="/shop" search={{ c: "boys" }} className={tab(c === "boys")}>Back Bench</Link>
       </div>
-      <ProductGrid query={query} />
+      <ProductGrid collection={c} />
     </div>
   );
 }
