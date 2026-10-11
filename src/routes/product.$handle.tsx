@@ -32,7 +32,7 @@ function ProductPage() {
     );
 
   const add = () => {
-    addItem({ product, size: product.sizes[size], quantity: 1 });
+    addItem({ product, size: product.sizes[size] ?? "A4", quantity: 1 });
     toast.success("Thaile mein daal diya 🔥", { position: "top-center" });
     setOpen(true);
   };

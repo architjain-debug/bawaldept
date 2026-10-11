@@ -11,7 +11,7 @@ export function ProductCard({ product, index = 0 }: { product: Product; index?: 
 
   const add = (e: React.MouseEvent) => {
     e.preventDefault();
-    addItem({ product, size: product.sizes[0], quantity: 1 });
+    addItem({ product, size: product.sizes[0] ?? "A4", quantity: 1 });
     toast.success("Thaile mein daal diya 🔥", { description: product.title, position: "top-center" });
   };
 

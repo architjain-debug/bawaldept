@@ -1,7 +1,7 @@
 import { PRODUCTS } from "@/lib/products";
 import { ProductCard } from "./ProductCard";
 
-export function ProductGrid({ collection, limit }: { collection?: "girls" | "boys"; limit?: number }) {
+export function ProductGrid({ collection, limit }: { collection?: "girls" | "boys" | undefined; limit?: number }) {
   let items = collection ? PRODUCTS.filter((p) => p.collection === collection) : PRODUCTS;
   if (limit) items = items.slice(0, limit);
   if (items.length === 0)
