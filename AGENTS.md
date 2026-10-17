@@ -8,3 +8,4 @@
 > Commits you push to the connected branch sync back to Lovable and show up in
 > the editor, so keep the branch in a working state.
 <!-- LOVABLE:END -->
+- Product catalogue comes only from Shopify Storefront API (src/lib/shopify.ts); collections resolve by handle (hostel-harami, soft-chaos-club) with tag fallback (boys/girls). Why: products added in Shopify Admin appear without code changes.
